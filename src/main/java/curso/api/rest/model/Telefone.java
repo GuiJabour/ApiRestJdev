@@ -10,24 +10,24 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Telefone {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	
+	private Long idtelefone;
+
 	private String numero;
-	
+
 	@JsonIgnore
-	@org.hibernate.annotations.ForeignKey(name="usuairo_id")
+	@org.hibernate.annotations.ForeignKey(name = "usuairo_id")
 	@ManyToOne(optional = false)
 	private Usuario usuario;
 
-	public Long getId() {
-		return id;
+	public Long getIdtelefone() {
+		return idtelefone;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdtelefone(Long idtelefone) {
+		this.idtelefone = idtelefone;
 	}
 
 	public String getNumero() {
@@ -45,9 +45,5 @@ public class Telefone {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
-	
-	
-	
-	
+
 }
